@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body> 
+    <button class="close-btn" onclick="window.close();">X</button>
+    <div class="orders-container">
+        
+        <h2>Total Orders</h2>
+        <div class="orders-summary">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Strain</th>
+                        <th> Total Distributed: </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% totalQuantitiesByItem.forEach(item => { %>
+                        <tr>
+                            <td><span class="secondary-text"><%= item.item_name %></span></td>
+                            <td><span class="secondary-text"><%= item.totalQuantity %> </span>grams</td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Summary</h2>
+        <div class="summary">
+            
+            <p>Amount of Cannabis Distributed this Month:<span class="secondary-text"> <%= totalQuantityCurrentMonth %></span> grams</p>
+            <p><strong> Amount of Donnations Recived This Month:</strong>€<span class="secondary-text"><%= totalAmountPaidCurrentMonth %></span></p>
+            <br>_________
+            <p>Total Amount of Cannabis Distributed:<span class="secondary-text"> <%= totalQuantity %> </span>grams</p>
+            <p><strong>Total Amount of Donnations Recived:</strong>€<span class="secondary-text"><%= totalAmountPaid %></span></p>
+        </div>
+
+        <h2>All Orders</h2>
+        <div class="orders-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Strain</th>
+                        <th>Grams</th>
+                        <th>Amount Paid</th>
+                        <th>Give On:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% orders.forEach(order => { %>
+                        <tr>
+                            <td><span class="secondary-text"><%= order.username %></span></td>
+                            <td><span class="secondary-text"><%= order.item_name %></span></td>
+                            <td><span class="secondary-text"><%= order.quantity %></span> grams</td>
+                            <td>€<span class="secondary-text"><%= order.amount_paid %></span></td>
+                            <td><span class="secondary-text"><%= order.confirmation_date.toDateString() %></span></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

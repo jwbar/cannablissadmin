@@ -1,0 +1,333 @@
+@font-face {
+    font-family: 'ITC Motter Corpus';
+    src: url('/fonts/ITC-Motter-Corpus.woff2') format('woff2'),
+         url('/fonts/ITC-Motter-Corpus.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'A Day Without Sun';
+    src: url('/fonts/A-DAY-WITHOUT-SUN.otf') format('otf');
+}
+
+header {
+    height: 5vh; /* 1/5th of the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;        /* Ensure it is properly positioned */
+    z-index: 1;       
+    background-color: #333;
+    color: #DAB960;
+    font-family: 'ITC Motter Corpus', sans-serif;
+}
+
+footer {
+    height: 5vh; /* 1/5th of the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;        /* Ensure it is properly positioned */
+    z-index: 1;       
+    background-color: #333;
+    color: #DAB960;
+    font-family: 'ITC Motter Corpus', sans-serif;
+}
+
+header a {
+    color: #DAB960;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+/* Navbar links */
+
+.navbar-link {
+    color: #DAB960;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-left: 10px; /* Add margin to separate the links */
+    border: 1px solid #DAB960; /* Optional: add a border for better visibility */
+    border-radius: 5px; /* Optional: add border radius for rounded corners */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #152325;
+    color: #DAB960;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.left-image {
+    border-right: 2px solid #DAB960;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-image-login {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-image {
+    width: 100%;
+    height: auto;
+}
+
+.login {
+    border: 1px solid #DAB960;
+    border-radius: 5px;
+    flex: 2;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.content {
+    flex: 2;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.svg-container {
+    display: none; /* Hide by default */
+    position: fixed;
+    right: 0;
+    bottom: 20vh; /* Position just above the footer */
+    width: 7%; /* Further reduce the size */
+    height: 5%;
+    z-index: 10; /* Ensure it appears on top */
+}
+
+h1 {
+    font-family: 'ITC Motter Corpus', sans-serif;
+    font-size: 2rem;
+    background-color: #333;
+    color: #DAB960;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: auto;
+}
+
+h2 {
+    font-family: 'ITC Motter Corpus', sans-serif;
+    font-size: 1rem;
+    background-color: #333;
+    color: #DAB960;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: auto;
+}
+
+a {
+    color: #DAB960;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.strains-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.strain-item {
+    background-color: #152325;
+    border: 1px solid #DAB960;
+    border-radius: 5px;
+    padding: 10px;
+    width: 23%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.grams-collection {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.gram-item {
+    background-color: #152325;
+    border: 1px solid #DAB960;
+    border-radius: 5px;
+    padding: 10px;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.secondary-text {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 14px;
+    color: #d3cbb6;
+}
+
+button {
+    width: auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #DAB960;
+    color: #152325;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.bottom-right-svg {
+    display: none; /* Hide by default */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 33%;
+    height: auto;
+    opacity: 0.5;
+}
+
+.orders-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #DAB960;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.orders-summary,
+.summary,
+.orders-list {
+    margin-bottom: 20px;
+    border: 1px solid #DAB960;
+    border-radius: 5px;
+}
+
+.orders-summary table,
+.orders-list table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.orders-summary th,
+.orders-summary td,
+.orders-list th,
+.orders-list td {
+    border: 1px solid #DAB960;
+    padding: 8px;
+    text-align: center;
+}
+
+.orders-summary th,
+.orders-list th {
+    background-color: #333;
+    color: #DAB960;
+}
+
+.orders-summary td,
+.orders-list td {
+    background-color: #152325;
+    color: #DAB960;
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-family: 'ITC Motter Corpus', sans-serif;
+        font-size: 2rem;
+        background-color: #333;
+        color: #DAB960;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+        width: auto;
+    }
+    
+    h2 {
+        font-family: 'ITC Motter Corpus', sans-serif;
+        font-size: 1rem;
+        background-color: #333;
+        color: #DAB960;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+        width: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-image {
+        display: none;
+    }
+
+    .content {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .svg-container {
+        display: block; /* Show SVG on mobile view */
+        position: fixed;
+        bottom: 10vh; /* Position above the hidden footer */
+        width: 50%;
+        height: auto;
+        left: 25%; /* Center the SVG */
+    }
+
+    footer {
+        display: none; /* Hide footer in mobile view */
+    }
+}
+
+@media (max-width: 480px) {
+    .strain-item {
+        width: 100%;
+    }
+
+    .gram-item {
+        width: 100%;
+    }
+
+    .bottom-right-svg {
+        display: block; /* Show SVG on smaller screens */
+        width: 50%;
+        height: auto;
+        left: 25%; /* Center the SVG */
+    }
+}

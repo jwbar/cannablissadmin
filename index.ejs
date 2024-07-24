@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cannabliss Admin</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<!-- JavaScript for popup -->
+<script>
+    function openMembersPopup() {
+        const width = 600;
+        const height = 400;
+        const left = (window.innerWidth - width) / 2;
+        const top = (window.innerHeight - height) / 2;
+        const url = '/members';
+        window.open(url, 'MembersPopup', `width=${width},height=${height},left=${left},top=${top}`);
+    }
+    function openOrdersPopup() {
+        const width = 800;
+        const height = 600;
+        const left = (window.innerWidth - width) / 2;
+        const top = (window.innerHeight - height) / 2;
+        const url = '/orders';
+        window.open(url, 'MembersPopup', `width=${width},height=${height},left=${left},top=${top}`);
+    }
+</script>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" class="navbar-link" onclick="openMembersPopup();">Members</a>
+            <a href="#" class="navbar-link" onclick="openOrdersPopup();">Orders</a>
+            <a href="/logout" class="navbar-link">Logout</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="left-image">
+            <img src="../logo.png" alt="Logo" class="logo-image">
+        </div>
+        <div class="content">
+            <h1>Cannabliss Dashboard:</h1>
+            <br>
+            <h2>Strains Instock:</h2>
+            <div class="strains-collection">
+                <% strains.forEach(strain => { %>
+                    <div class="strain-item">
+                        <strong>Name:</strong> <span class="secondary-text"><%= strain.name %></span><br>
+                        <strong>Grams Available:</strong> <span class="secondary-text"><%= strain.grams_available %></span><br>
+                    </div>
+                <% }); %>
+            </div>
+
+            <h2>PickUp Appointments:</h2>
+            <div class="grams-collection">
+                <% grams.forEach(gram => { %>
+                    <div class="gram-item">
+                        <strong>Username:</strong> <span class="secondary-text"><%= gram.username %></span><br>
+                        <strong>Item Name:</strong> <span class="secondary-text"><%= gram.item_name %></span><br>
+                        <strong>Quantity:</strong> <span class="secondary-text"><%= gram.quantity %></span><br>
+                        <strong>Total Price:</strong> <span class="secondary-text"><%= gram.quantity * 8 %></span><br>
+                        <strong>Time Slot:</strong> <span class="secondary-text"><%= gram.time_slot %></span><br>
+                        <strong>Pickup Date:</strong> <span class="secondary-text"><%= gram.pickup_date %></span><br>
+                        <br>
+                        <!-- Cancel button form -->
+                        <form onsubmit="return confirmDeletion(this)" action="/grams/<%= gram._id %>/delete" method="POST">
+                            <button type="submit">Cancel</button>
+                        </form>
+                        <br>
+                        <!-- Confirm button form -->
+                        <form action="/grams/<%= gram._id %>/confirm" method="POST">
+                            <button type="submit">Confirm</button>
+                        </form>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <div class="svg-container">
+        <img src="/cannabissfooter.svg" alt="cannabisbudsm v">
+    </div>
+    <footer>
+        <span class="secondary-text"> - cannabis CSC management software  -copyleft 2024- http://botanical.studio  grow tech startup moosdorfstrs 7-9, 12435 </span>
+    </footer>
+    <script>
+        function confirmDeletion(form) {
+            if (confirm("Are you sure you want to delete this entry?")) {
+                if (confirm("This action is irreversible. Do you really want to delete this entry?")) {
+                    return true; // Proceed with form submission
+                }
+            }
+            return false; // Cancel form submission
+        }
+    </script>
+</body>
+</html>
